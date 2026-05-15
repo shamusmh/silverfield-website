@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Silver Field Capital</title>
+<meta name="description" content="Start a confidential conversation with Silver Field Capital. Founders, brokers, investment banks, and lenders all welcome.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L90 20 L90 50 Q90 80 50 95 Q10 80 10 50 L10 20 Z' fill='none' stroke='%237cb8e8' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <svg class="nav-brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M50 5 L90 18 L90 48 Q90 78 50 95 Q10 78 10 48 L10 18 Z" fill="none" stroke="#7cb8e8" stroke-width="2.5"/>
+        <path d="M10 65 Q30 60 50 65 T90 63" stroke="#d4a574" stroke-width="1.5" fill="none" opacity="0.8"/>
+        <circle cx="62" cy="42" r="3" fill="#d4a574"/>
+        <path d="M62 42 L62 58" stroke="#d4a574" stroke-width="1.5"/>
+        <path d="M55 48 Q62 38 69 48" fill="#7dd3b7" opacity="0.7"/>
+      </svg>
+      <span>Silver Field</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Who We Are</a></li>
+      <li><a href="approach.html">Approach</a></li>
+      <li><a href="criteria.html">What We Look For</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" style="padding-bottom: var(--space-12);">
+  <div class="container">
+    <div class="reveal" style="max-width: 760px;">
+      <div class="eyebrow">Contact</div>
+      <h1 style="margin-top: var(--space-6);">
+        Start a<br>
+        <span class="italic-accent">confidential conversation.</span>
+      </h1>
+      <p class="hero-lede" style="margin-top: var(--space-8);">
+        Whether you're a founder considering your next chapter, a capital partner thinking about deploying alongside us, or a deal professional with something we should see — tell us a bit about you and we'll respond personally.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="reveal" style="max-width: 880px; margin: 0 auto;">
+
+      <!-- Success state (hidden by default, shown via JS after submit) -->
+      <div id="form-success" style="display: none;">
+        <div class="card" style="padding: var(--space-16); text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-mid)); border-color: var(--accent-mint-glow);">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--accent-mint-glow); color: var(--accent-mint); display: inline-flex; align-items: center; justify-content: center; margin-bottom: var(--space-6);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2 style="margin-bottom: var(--space-4);">Message received.</h2>
+          <p style="max-width: 50ch; margin: 0 auto; font-size: 1.05rem;">
+            Thank you for reaching out. We respect what it takes to send a note like this — and we'll respond personally within two business days.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            class="card"
+            style="padding: var(--space-12);">
+
+        <!--
+          ─────────────────────────────────────────────────────────────────
+          FORMSPREE SETUP — Replace YOUR_FORM_ID above with your real ID.
+          1. Go to https://formspree.io and create a free account.
+          2. Click "+ New Form", give it a name (e.g. "Silver Field Site")
+          3. Set the receiving email (probably shamus@silverfieldcapital.com)
+          4. Copy the form endpoint (looks like /f/abcd1234)
+          5. Paste it in place of YOUR_FORM_ID above.
+          Free tier: 50 submissions/month. Pro is ~$10/mo if needed.
+
+          Alternative services: Web3Forms (free, unlimited), Basin, Getform.
+          All work the same way — set the action URL and you're done.
+          ─────────────────────────────────────────────────────────────────
+        -->
+
+        <div class="eyebrow" style="margin-bottom: var(--space-4);">Step 1 · How Should We Think About You?</div>
+        <h3 style="margin-bottom: var(--space-6); color: var(--text-primary);">Tell us who you are.</h3>
+
+        <div class="role-group" style="margin-bottom: var(--space-12);">
+          <label class="role-option">
+            <input type="radio" name="role" value="Founder / Business Owner" required>
+            <div class="role-option-body">
+              <strong>Founder / Business Owner</strong>
+              <span>I run a company and want to explore a transaction</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="Broker / M&A Advisor">
+            <div class="role-option-body">
+              <strong>Broker / M&amp;A Advisor</strong>
+              <span>I have a deal or a client I'd like to discuss</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="Investment Bank">
+            <div class="role-option-body">
+              <strong>Investment Bank</strong>
+              <span>I'd like to add Silver Field to a process or deal list</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="Lender">
+            <div class="role-option-body">
+              <strong>Lender</strong>
+              <span>I work in debt capital and want to be on our radar</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="Capital Partner / LP">
+            <div class="role-option-body">
+              <strong>Capital Partner / LP</strong>
+              <span>I'd like to learn about co-investing alongside Silver Field</span>
+            </div>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="role" value="Other">
+            <div class="role-option-body">
+              <strong>Other</strong>
+              <span>Something else worth a conversation</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="eyebrow" style="margin-bottom: var(--space-4);">Step 2 · The Details</div>
+        <h3 style="margin-bottom: var(--space-6); color: var(--text-primary);">Tell us about it.</h3>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-field full">
+            <label for="company">Company / Firm</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-field full" id="founderFields">
+            <label for="industry">If you're a founder, what industry is your business in?</label>
+            <input type="text" id="industry" name="industry" placeholder="e.g. Vertical software, business services, manufacturing">
+          </div>
+          <div class="form-field full">
+            <label for="message">What would you like to talk about? <span class="req">*</span></label>
+            <textarea id="message" name="message" required placeholder="A few sentences is fine. The more context the better — but we'll follow up either way."></textarea>
+          </div>
+        </div>
+
+        <!-- Hidden field for Formspree to set the subject -->
+        <input type="hidden" name="_subject" value="New inquiry from silverfieldcapital.com">
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <div style="margin-top: var(--space-8); display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+          <button type="submit" class="btn btn-primary btn-arrow">Send Message</button>
+          <p style="font-size: 0.85rem; color: var(--text-tertiary); margin: 0;">All inquiries are treated as confidential.</p>
+        </div>
+      </form>
+
+      <!-- Alternate contact -->
+      <div class="reveal" style="margin-top: var(--space-12); text-align: center;">
+        <p style="color: var(--text-tertiary); margin-bottom: var(--space-4); font-size: 0.9rem; letter-spacing: 0.04em;">Prefer to reach out directly?</p>
+        <p style="font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary);">
+          <a href="mailto:shamus@silverfieldcapital.com" style="color: var(--accent-blue);">shamus@silverfieldcapital.com</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand">Silver Field Capital</span>
+        <span class="footer-meta"> &nbsp;|&nbsp; East Grand Rapids, MI</span>
+      </div>
+      <div class="footer-confidential">Operator-Led · Founder-Aligned</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form submission with Formspree AJAX — gives us inline success state
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+      } else {
+        alert('There was an issue submitting the form. Please email us directly.');
+      }
+    } catch (err) {
+      alert('There was an issue submitting the form. Please email us directly.');
+    }
+  });
+</script>
+
+</body>
+</html>
