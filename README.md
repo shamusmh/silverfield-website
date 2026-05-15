@@ -1,6 +1,6 @@
-# Silver Field Capital — Marketing Site
+# Silver Field — Marketing Site
 
-A 5-page static marketing site for Silver Field Capital. Built as plain HTML/CSS — no build step, no framework, no dependencies. Drop it on any static host and it works.
+A 5-page static marketing site for Silver Field. Built as plain HTML/CSS — no build step, no framework, no dependencies. Drop it on any static host and it works.
 
 ## Pages
 
@@ -8,6 +8,7 @@ A 5-page static marketing site for Silver Field Capital. Built as plain HTML/CSS
 |---|---|
 | `index.html` | Home / hero — "Who we are" |
 | `approach.html` | Values, how we're different, the playbook, operating model |
+| `investments.html` | Representative portfolio companies (Upshop, Tactiq, NovoPath, Team Service) |
 | `criteria.html` | What we look for in target businesses |
 | `team.html` | Shamus + John bios |
 | `contact.html` | Contact form with role-based routing |

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investments — Silver Field</title>
+<meta name="description" content="Representative investments and operating engagements where Silver Field has applied its programmatic operating playbook.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  /* Investments page-specific styles */
+  .invest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+  @media (max-width: 760px) { .invest-grid { grid-template-columns: 1fr; } }
+
+  .invest-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .invest-card:hover {
+    border-color: var(--accent-blue-glow);
+    transform: translateY(-2px);
+  }
+
+  .invest-logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .invest-wordmark {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .invest-wordmark .accent { color: var(--accent-gold); }
+
+  .invest-meta {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 600;
+  }
+  .invest-meta .dot {
+    color: var(--border-strong);
+  }
+
+  .invest-card h3 {
+    font-size: 1.15rem;
+    margin-top: var(--space-2);
+  }
+
+  .invest-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .invest-card .visit {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: var(--space-2);
+  }
+  .invest-card .visit::after {
+    content: '→';
+    transition: transform 0.2s ease;
+  }
+  .invest-card:hover .visit::after {
+    transform: translateX(3px);
+  }
+
+  /* Highlight ribbon for primary platform */
+  .invest-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .invest-tag.blue { color: var(--accent-blue); background: var(--accent-blue-glow); }
+  .invest-tag.gold { color: var(--accent-gold); background: var(--accent-gold-glow); }
+  .invest-tag.mint { color: var(--accent-mint); background: var(--accent-mint-glow); }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img class="nav-brand-mark" src="logo-mark.png" alt="Silver Field shield">
+      <span>Silver Field</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Who We Are</a></li>
+      <li><a href="approach.html">Approach</a></li>
+      <li><a href="investments.html" class="active">Investments</a></li>
+      <li><a href="criteria.html">What We Look For</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ──────────────────────── PAGE HEADER ──────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="reveal" style="max-width: 800px;">
+      <div class="eyebrow">Representative Investments</div>
+      <h1 style="margin-top: var(--space-6);">
+        Businesses we've helped<br>
+        <span class="italic-accent">build, scale, and transform.</span>
+      </h1>
+      <p class="hero-lede" style="margin-top: var(--space-8);">
+        A selection of the companies where our operating playbook has been applied — through platform builds, transformative mergers, cloud transitions, and AI integration. Each one taught us something we now bring forward.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── INVESTMENTS GRID ──────────────────────── -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="invest-grid reveal">
+
+      <!-- UPSHOP -->
+      <a class="invest-card" href="https://upshop.com/" target="_blank" rel="noopener">
+        <div class="invest-logo">
+          <span class="invest-wordmark">Up<span class="accent">shop</span></span>
+        </div>
+        <div class="invest-meta">
+          <span class="invest-tag blue">Platform</span>
+          <span class="dot">·</span>
+          <span>Grocery &amp; C-Store SaaS</span>
+        </div>
+        <h3>Total-store operations platform for grocery and convenience retail</h3>
+        <p>A six-acquisition buy-and-build, taken from on-premise software to SaaS to category leadership. Today the platform digitizes fresh operations, inventory, omnichannel orders, and waste reduction for many of the world's most recognizable grocery and convenience banners.</p>
+        <span class="visit">upshop.com</span>
+      </a>
+
+      <!-- TACTIQ -->
+      <a class="invest-card" href="https://www.tactiqtech.com/" target="_blank" rel="noopener">
+        <div class="invest-logo">
+          <span class="invest-wordmark">Tact<span class="accent">iq</span></span>
+        </div>
+        <div class="invest-meta">
+          <span class="invest-tag gold">Transformative Merger</span>
+          <span class="dot">·</span>
+          <span>Retail Supply Chain</span>
+        </div>
+        <h3>Direct store delivery software for retailers, manufacturers, and distributors</h3>
+        <p>Led a transformative merger that doubled the company in size, consolidated its competitive space, and meaningfully expanded its addressable market. Tactiq's platform now reaches more than 75,000 stores across a network of thousands of distribution partners.</p>
+        <span class="visit">tactiqtech.com</span>
+      </a>
+
+      <!-- NOVOPATH -->
+      <a class="invest-card" href="https://www.novopath.com/" target="_blank" rel="noopener">
+        <div class="invest-logo">
+          <span class="invest-wordmark">Novo<span class="accent">Path</span></span>
+        </div>
+        <div class="invest-meta">
+          <span class="invest-tag mint">Cloud Transition</span>
+          <span class="dot">·</span>
+          <span>Healthcare Software</span>
+        </div>
+        <h3>Laboratory information system for anatomic, molecular, and digital pathology</h3>
+        <p>Migrated a legacy on-premise pathology software business to a modern cloud platform, fundamentally changing its business model, retention economics, and growth trajectory. The platform now serves some of the world's most complex diagnostic laboratories.</p>
+        <span class="visit">novopath.com</span>
+      </a>
+
+      <!-- TEAM SERVICE -->
+      <a class="invest-card" href="https://teamservice.com/" target="_blank" rel="noopener">
+        <div class="invest-logo">
+          <span class="invest-wordmark">Team <span class="accent">Service</span></span>
+        </div>
+        <div class="invest-meta">
+          <span class="invest-tag blue">Operating Engagement</span>
+          <span class="dot">·</span>
+          <span>Field Service Software</span>
+        </div>
+        <h3>Service and project management software for the contracting industry</h3>
+        <p>Long-tenured vertical software business providing service management, project management, and field operations tools across cloud, Windows, and UNIX environments — serving HVAC, plumbing, electrical, and other contracting trades since 1991.</p>
+        <span class="visit">teamservice.com</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── THE THREE LEVERS ──────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">What These Businesses Have in Common</div>
+      <h2>Three patterns. Same playbook.</h2>
+      <p class="lede">
+        Different industries, different sizes, different starting points. But the operating moves that created the most value have rhymed across all of them — and they're the moves we bring to every new platform.
+      </p>
+    </div>
+
+    <div class="three-things reveal" style="grid-template-columns: 1fr auto 1fr auto 1fr;">
+      <div class="card card-centered">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+        </div>
+        <h3 class="card-title">Cloud Migration</h3>
+        <p>Four businesses moved from on-premise to cloud — changing their cost structure, their retention curves, and their growth ceilings.</p>
+      </div>
+      <div class="plus">+</div>
+      <div class="card card-centered">
+        <div class="card-icon gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <h3 class="card-title gold">Strategic M&amp;A</h3>
+        <p>Bolt-on acquisitions and one transformative merger — adding capability, customer relationships, and TAM at every step.</p>
+      </div>
+      <div class="plus">+</div>
+      <div class="card card-centered">
+        <div class="card-icon mint">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"/><path d="M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <h3 class="card-title mint">AI Integration</h3>
+        <p>Every business in the portfolio has had AI woven into its product and its operations — building durable advantages, not features.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── CTA ──────────────────────── -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>What's the next one?</h2>
+      <p>If you're running a business with this kind of profile — or if you know one — we'd welcome the conversation.</p>
+      <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary btn-arrow">Start a Conversation</a>
+        <a href="criteria.html" class="btn btn-ghost btn-arrow">What We Look For</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand">Silver Field</span>
+        <span class="footer-meta"> &nbsp;|&nbsp; East Grand Rapids, MI</span>
+      </div>
+      <div class="footer-confidential">Operator-Led · Founder-Aligned</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
