@@ -12,13 +12,13 @@ A 5-page static marketing site for Silver Field Capital. Built as plain HTML/CSS
 | `team.html` | Shamus + John bios |
 | `contact.html` | Contact form with role-based routing |
 | `styles.css` | All shared styling |
+| `logo-mark.png` | Shield-only mark (used in the nav of every page) |
+| `logo-full.png` | Full lockup with wordmark (used in the home hero) |
+| `favicon.png` | Browser tab icon (built from the shield) |
 
-## Before You Publish — Three Things To Do
+## Before You Publish — One Thing To Do
 
-### 1. Add John Rietema's bio
-Open `team.html` and search for `PLACEHOLDER BIO`. Replace the placeholder paragraphs and the three credential chips with John's real background.
-
-### 2. Wire up the contact form (5 minutes)
+### Wire up the contact form (5 minutes)
 The form posts to **Formspree** (free, no credit card needed for the basic plan).
 
 1. Sign up at https://formspree.io
@@ -29,10 +29,10 @@ The form posts to **Formspree** (free, no credit card needed for the basic plan)
 
 Free tier is 50 submissions/month. If you need more, the paid tier is around $10/month, or swap to **Web3Forms** (free, unlimited) — same setup pattern.
 
-### 3. (Optional) Replace the placeholder portraits
-The team page currently uses initials as portraits (SH and JR). If you want actual photos:
+### Optional: Add real team photos
+The team page currently uses initials (SH and JR) as portrait placeholders. To use actual photos:
 - Add `shamus.jpg` and `john.jpg` to the project folder
-- In `team.html`, replace `<span class="team-initials">SH</span>` with `<img src="shamus.jpg" alt="Shamus Hines" style="width:100%;height:100%;object-fit:cover;">`
+- In `team.html`, replace each `<span class="team-initials">XX</span>` with `<img src="shamus.jpg" alt="Shamus Hines" style="width:100%;height:100%;object-fit:cover;">`
 
 ---
 
@@ -91,7 +91,7 @@ Done.
 
 - **Type:** Fraunces (display) + Manrope (body), pulled from Google Fonts via CSS `@import`. Already wired up.
 - **Color palette:** Deep navy base (`#07101f`) with three accents — sky blue (`#7cb8e8`), warm gold (`#d4a574`), and mint (`#7dd3b7`). All exposed as CSS variables in `styles.css` if you want to tweak.
-- **Logo:** Currently using an inline SVG shield-and-tree mark. If you have a proper brand logo file, drop it in and swap the `<svg>` in the nav (and in the hero) with an `<img>` tag.
+- **Logo:** The real Silver Field shield + wordmark is wired in — `logo-mark.png` in the nav of every page, `logo-full.png` in the home hero, and `favicon.png` for the browser tab. All three are PNGs with transparent backgrounds, so they sit cleanly on the navy site background. If you ever update the brand mark, just drop in replacement files with the same names.
 - **No JavaScript dependencies.** A tiny inline script on each page handles scroll reveals and (on contact) form submission. Everything works without JS too — JS just adds polish.
 - **Mobile-responsive** down to 380px.
 - **Accessibility:** Semantic HTML, reduced-motion support, proper form labels, keyboard-navigable.
