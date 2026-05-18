@@ -247,6 +247,8 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
 
 @media (max-width: 980px) {
   .nav-inner { padding: var(--space-4) var(--space-6); }
+  .nav-brand { font-size: 1.05rem; }
+  .nav-brand-mark { height: 26px; }
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute;
@@ -353,11 +355,41 @@ section {
   justify-content: center;
   align-items: center;
 }
+.hero-mark img {
+  width: 100%;
+  height: auto;
+}
+.hero-logo-desktop {
+  max-width: 320px;
+}
+.hero-logo-mobile {
+  max-width: 110px;
+  opacity: 0.92;
+  display: none;
+}
 .hero-mark svg {
   width: 100%;
   max-width: 280px;
   height: auto;
   opacity: 0.95;
+}
+
+@media (max-width: 880px) {
+  /* On mobile, hero stacks - swap full lockup for the shield-only mark.
+     The "Silver Field" wordmark is already in the nav above, so the
+     shield reads as a brand accent without feeling redundant.
+     We reorder it to sit ABOVE the headline as an introducing mark
+     rather than an afterthought at the bottom. */
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-mark {
+    order: -1;
+    margin-bottom: var(--space-2);
+  }
+  .hero-logo-desktop { display: none; }
+  .hero-logo-mobile { display: block; }
 }
 
 /* ─── Cards ─────────────────────────────────────────────────────────────── */
@@ -978,6 +1010,18 @@ section {
 
 @media (max-width: 880px) {
   .three-levers { grid-template-columns: 1fr !important; }
+}
+
+/* Responsive grid column overrides — these ALWAYS stack on mobile,
+   overriding any default grid layout. Use these instead of inline
+   grid-template-columns styles. */
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) {
+  .cols-2,
+  .cols-3 {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ─── Reveal animation ─────────────────────────────────────────────────── */
