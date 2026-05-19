@@ -1041,36 +1041,6 @@ section {
   }
 }
 
-/* ─── Topographic texture ──────────────────────────────────────────────── */
-/*
-   .topo-wrap — position:relative wrapper that contains both the topo SVG
-                and the section content. Add to any section div.
-   .topo-svg  — the absolutely positioned SVG. Positioned via inline style
-                for per-section control. Always pointer-events:none.
-*/
-
-.topo-wrap {
-  position: relative;
-  overflow: hidden;
-}
-
-.topo-svg {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* All direct children of .topo-wrap sit above the SVG */
-.topo-wrap > *:not(.topo-svg) {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  /* Scale back opacity on mobile so texture doesn't overwhelm small screens */
-  .topo-svg { opacity: 0.6 !important; }
-}
-
 /* ─── Reveal animation ─────────────────────────────────────────────────── */
 .reveal {
   opacity: 0;
