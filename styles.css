@@ -839,6 +839,23 @@ section {
   position: relative;
   overflow: hidden;
 }
+
+/* When a real photo is present, drop the radial highlight overlay
+   so the headshot sits cleanly in the navy frame */
+.team-portrait.has-photo::after {
+  display: none;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Subtle tone adjustment so the photo harmonizes with the navy site palette:
+     slight desaturation prevents bright skin tones from overpowering the muted UI,
+     and a faint cool overlay (via mix-blend-mode trick on the parent's bg) is
+     skipped here in favor of a simpler, more reliable approach. */
+}
 .team-portrait::after {
   content: '';
   position: absolute;
