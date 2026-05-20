@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What We Look For — Silver Field</title>
-<meta name="description" content="The kinds of businesses Silver Field acquires: recurring revenue, $3–$10M in EBITDA, defensible moats, and founders ready for their next chapter.">
+<meta name="description" content="The kinds of businesses Silver Field acquires: recurring revenue, $2–$10M in EBITDA, defensible moats, and founders ready for their next chapter.">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -33,8 +33,35 @@
 <main>
 
 <!-- ──────────────────────── PAGE HEADER ──────────────────────── -->
-<section class="hero">
-  <div class="container">
+<section class="hero" style="position:relative;overflow:hidden;">
+    <!-- Investment scorecard graphic -->
+    <div style="position:absolute;right:0;top:0;bottom:0;width:46%;pointer-events:none;display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem 3rem 0;">
+      <div style="width:100%;max-width:400px;border:1px solid rgba(212,165,116,.22);border-radius:6px;padding:1.75rem;background:linear-gradient(135deg,rgba(17,35,65,.85),rgba(12,24,48,.7));position:relative;overflow:hidden;">
+        <div style="position:absolute;top:.75rem;right:1rem;font-size:.6rem;letter-spacing:.22em;color:rgba(212,165,116,.35);font-weight:700;font-family:Manrope,sans-serif;">EVALUATION CRITERIA</div>
+        <div style="font-family:Fraunces,Georgia,serif;font-size:1rem;color:var(--text-primary);margin-bottom:1.2rem;font-weight:500;border-bottom:1px solid rgba(212,165,116,.18);padding-bottom:.7rem;">Platform Criteria Assessment</div>
+        <style>
+          .sc-row{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);}
+          .sc-row:last-child{border-bottom:none;}
+          .sc-lbl{font-size:.82rem;color:var(--text-secondary);font-weight:500;font-family:Manrope,sans-serif;}
+          .sc-right{display:flex;align-items:center;gap:.6rem;}
+          .sc-bars{display:flex;gap:3px;}
+          .sc-pip{width:16px;height:7px;border-radius:2px;}
+          .pip-on{background:#d4a574;}
+          .pip-off{background:rgba(255,255,255,.1);}
+          .sc-val{font-size:.72rem;font-weight:700;color:#d4a574;letter-spacing:.05em;white-space:nowrap;font-family:Manrope,sans-serif;min-width:3.8rem;text-align:right;}
+        </style>
+        <div class="sc-row"><span class="sc-lbl">Recurring Revenue</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div></div><span class="sc-val">Essential</span></div></div>
+        <div class="sc-row"><span class="sc-lbl">EBITDA $2M – $10M</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div></div><span class="sc-val">Essential</span></div></div>
+        <div class="sc-row"><span class="sc-lbl">Defensible Moat</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-off"></div></div><span class="sc-val">Critical</span></div></div>
+        <div class="sc-row"><span class="sc-lbl">High Client Retention</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-off"></div></div><span class="sc-val">Critical</span></div></div>
+        <div class="sc-row"><span class="sc-lbl">Double-Digit Margins</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-off"></div><div class="sc-pip pip-off"></div></div><span class="sc-val">Strong+</span></div></div>
+        <div class="sc-row"><span class="sc-lbl">Founder-Led Business</span><div class="sc-right"><div class="sc-bars"><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-on"></div><div class="sc-pip pip-off"></div><div class="sc-pip pip-off"></div></div><span class="sc-val">Strong+</span></div></div>
+      </div>
+    </div>
+    <!-- Left-side fade so headline stays clear -->
+    <div style="position:absolute;right:0;top:0;bottom:0;width:46%;background:linear-gradient(90deg,var(--bg-deep) 0%,transparent 30%);pointer-events:none;"></div>
+
+  <div class="container" style="position:relative;z-index:2;">
     <div class="reveal" style="max-width: 800px;">
       <div class="eyebrow">What We Look For</div>
       <h1 style="margin-top: var(--space-6);">
@@ -111,11 +138,11 @@
           </div>
           <h3 class="card-title gold">EBITDA Profile</h3>
         </div>
-        <p style="max-width: 65ch;">Our platform sweet spot. Large enough to justify a professional operating cadence and management equity pool — small enough that operator-led value creation moves the needle in a real way.</p>
+        <p style="max-width: 65ch;">The range where operator involvement, management equity, and platform discipline combine to create the most meaningful outcomes. Enough scale to build a real team and operating cadence — enough room to grow that our work actually moves the needle.</p>
         <div style="margin-top: var(--space-8); max-width: 520px;">
           <div class="eyebrow" style="margin-bottom: var(--space-3);">Platform EBITDA</div>
-          <div class="criteria-detail" style="font-size: 2.2rem;"><span class="em">$3M – $10M</span></div>
-          <p style="font-size: 0.92rem; margin-top: var(--space-3);">Normalized and sustainable. Adjusted for owner compensation and one-time items — not the headline number on the teaser.</p>
+          <div class="criteria-detail" style="font-size: 2.2rem;"><span class="em">$2M – $10M</span></div>
+          <p style="font-size: 0.92rem; margin-top: var(--space-3);">Normalized and sustainable — adjusted for owner compensation and one-time items, not the headline number on the teaser.</p>
         </div>
       </div>
     </div>
@@ -190,6 +217,60 @@
       <div class="playbook-card">
         <h3 class="card-title">Platform for a Roll-Up</h3>
         <p>You're sitting in a fragmented market and you can see the consolidation opportunity — but executing it is a full-time job that's bigger than the one you signed up for. We'll fund and execute it alongside you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── WHAT SELLERS GET ──────────────────────── -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">What Sellers Get</div>
+      <h2>What founders tell us matters most.</h2>
+      <p class="lede">
+        Founders don't sell a business to a category — they sell it to a partner they trust. We've been on both sides of that table. We know what a good outcome actually looks like for a founder, and we build our process around delivering it.
+      </p>
+    </div>
+
+    <div class="reveal cols-3" style="display: grid; gap: var(--space-6); margin-bottom: var(--space-6);">
+      <div class="card">
+        <div class="card-icon gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="card-title gold">Fair Valuation</h3>
+        <p>We price businesses on what they're actually worth — not what we can get away with. Our track record is built on long-term partnerships, not on winning negotiations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3 class="card-title">Cash-Heavy Terms</h3>
+        <p>We structure deals with meaningful cash at close. When we use a seller note, it's priced fairly and structured to protect the seller — not to shift our risk onto you.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon mint">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="card-title mint">Continuity That's Real</h3>
+        <p>We don't promise to preserve what you built and then gut it. Your employees, customers, and culture are what made the business worth buying — and we treat them that way.</p>
+      </div>
+    </div>
+
+    <div class="reveal cols-2" style="display: grid; gap: var(--space-6);">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="card-title">Transparent Process</h3>
+        <p>We tell you what we're doing and why at every stage. No surprises in diligence, no retrade at the close. We've been the founder on the other side of this process — we run ours the way we wished ours had been run.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="card-title gold">Clean Transitions</h3>
+        <p>We prepare for transitions as carefully as we prepare for acquisitions. Clear handoffs, defined roles, retained relationships. Sellers who've worked with us describe the post-close period as the least stressful part of the whole process.</p>
       </div>
     </div>
   </div>

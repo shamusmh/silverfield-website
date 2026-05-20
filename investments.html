@@ -33,6 +33,30 @@
     transform: translateY(-2px);
   }
 
+
+  .invest-card-header {
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin: calc(-1 * var(--space-8)) calc(-1 * var(--space-8)) var(--space-4);
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem 1.5rem;
+  }
+  .invest-card-header svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .invest-card-header .invest-wordmark {
+    position: relative;
+    z-index: 2;
+  }
+  /* Remove old invest-logo top border when header is present */
+  .invest-card:has(.invest-card-header) .invest-logo { display: none; }
+
   .invest-logo {
     min-height: 70px;
     display: flex;
@@ -157,7 +181,22 @@
 
       <!-- UPSHOP -->
       <a class="invest-card" href="https://upshop.com/" target="_blank" rel="noopener">
-        <div class="invest-logo">
+              <div class="invest-card-header" style="background:linear-gradient(135deg,#0d1e38,#142948);">
+        <svg viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <path d="M-20 42 Q30 28 80 42 T180 42 T280 42 T380 42 T480 42" stroke="#7cb8e8" stroke-width="1.2" fill="none" opacity="0.45"/>
+          <path d="M-20 57 Q40 41 90 57 T190 57 T290 57 T390 57 T490 57" stroke="#7cb8e8" stroke-width="1" fill="none" opacity="0.3"/>
+          <path d="M-20 72 Q50 55 100 72 T200 72 T300 72 T400 72" stroke="#7cb8e8" stroke-width="0.8" fill="none" opacity="0.2"/>
+          <path d="M0 84 Q50 72 100 82 T200 80 T300 82 T400 80 L400 110 L0 110 Z" fill="rgba(124,184,232,0.06)"/>
+          <rect x="308" y="14" width="2" height="82" fill="#7cb8e8" opacity="0.12" rx="1"/>
+          <rect x="316" y="22" width="1" height="65" fill="#7cb8e8" opacity="0.09" rx="1"/>
+          <rect x="322" y="16" width="3" height="76" fill="#7cb8e8" opacity="0.10" rx="1"/>
+          <rect x="330" y="28" width="1" height="55" fill="#7cb8e8" opacity="0.08" rx="1"/>
+          <rect x="336" y="14" width="2" height="82" fill="#7cb8e8" opacity="0.12" rx="1"/>
+          <rect x="343" y="20" width="4" height="68" fill="#7cb8e8" opacity="0.09" rx="1"/>
+        </svg>
+        <span class="invest-wordmark">Up<span class="accent">shop</span></span>
+      </div>
+      <div class="invest-logo">
           <span class="invest-wordmark">Up<span class="accent">shop</span></span>
         </div>
         <div class="invest-meta">
@@ -172,7 +211,29 @@
 
       <!-- TACTIQ -->
       <a class="invest-card" href="https://www.tactiqtech.com/" target="_blank" rel="noopener">
-        <div class="invest-logo">
+              <div class="invest-card-header" style="background:linear-gradient(135deg,#1a1030,#0e1828);">
+        <svg viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <circle cx="80" cy="40" r="4.5" fill="#d4a574" opacity="0.55"/>
+          <circle cx="160" cy="28" r="3.5" fill="#d4a574" opacity="0.48"/>
+          <circle cx="200" cy="58" r="5.5" fill="#d4a574" opacity="0.65"/>
+          <circle cx="280" cy="36" r="3.5" fill="#d4a574" opacity="0.48"/>
+          <circle cx="320" cy="78" r="4.5" fill="#d4a574" opacity="0.52"/>
+          <circle cx="120" cy="88" r="3" fill="#d4a574" opacity="0.38"/>
+          <circle cx="240" cy="96" r="3.5" fill="#d4a574" opacity="0.42"/>
+          <circle cx="350" cy="46" r="3" fill="#d4a574" opacity="0.38"/>
+          <g stroke="#d4a574" stroke-width="0.75" opacity="0.22" fill="none">
+            <line x1="80" y1="40" x2="160" y2="28"/><line x1="160" y1="28" x2="200" y2="58"/>
+            <line x1="200" y1="58" x2="280" y2="36"/><line x1="280" y1="36" x2="320" y2="78"/>
+            <line x1="200" y1="58" x2="120" y2="88"/><line x1="200" y1="58" x2="240" y2="96"/>
+            <line x1="280" y1="36" x2="350" y2="46"/><line x1="80"  y1="40" x2="120" y2="88"/>
+          </g>
+          <circle cx="200" cy="58" r="14" stroke="#d4a574" stroke-width="0.7" fill="none" opacity="0.18"/>
+          <circle cx="200" cy="58" r="26" stroke="#d4a574" stroke-width="0.5" fill="none" opacity="0.10"/>
+          <circle cx="200" cy="58" r="40" stroke="#d4a574" stroke-width="0.4" fill="none" opacity="0.06"/>
+        </svg>
+        <span class="invest-wordmark">Tact<span class="accent">iq</span></span>
+      </div>
+      <div class="invest-logo">
           <span class="invest-wordmark">Tact<span class="accent">iq</span></span>
         </div>
         <div class="invest-meta">
@@ -187,7 +248,15 @@
 
       <!-- NOVOPATH -->
       <a class="invest-card" href="https://www.novopath.com/" target="_blank" rel="noopener">
-        <div class="invest-logo">
+              <div class="invest-card-header" style="background:linear-gradient(135deg,#0d2018,#091a10);">
+        <svg viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <g opacity="0.45"><path d="M60 16 Q100 40 60 68 Q20 96 60 116" stroke="#7dd3b7" stroke-width="1.4" fill="none"/><path d="M100 16 Q60 40 100 68 Q140 96 100 116" stroke="#7dd3b7" stroke-width="1.4" fill="none"/><line x1="60" y1="28" x2="100" y2="28" stroke="#7dd3b7" stroke-width="1" opacity="0.55"/><line x1="68" y1="46" x2="92" y2="46" stroke="#7dd3b7" stroke-width="1" opacity="0.48"/><line x1="76" y1="60" x2="84" y2="60" stroke="#7dd3b7" stroke-width="1" opacity="0.55"/><line x1="68" y1="74" x2="92" y2="74" stroke="#7dd3b7" stroke-width="1" opacity="0.48"/><line x1="60" y1="90" x2="100" y2="90" stroke="#7dd3b7" stroke-width="1" opacity="0.55"/></g>
+          <g stroke="#7dd3b7" stroke-width="0.65" fill="none" opacity="0.16"><polygon points="210,18 235,5 260,18 260,45 235,58 210,45"/><polygon points="260,18 285,5 310,18 310,45 285,58 260,45"/><polygon points="235,58 260,45 285,58 285,85 260,98 235,85"/><polygon points="185,58 210,45 235,58 235,85 210,98 185,85"/></g>
+          <polygon points="235,58 260,45 285,58 285,85 260,98 235,85" stroke="#7dd3b7" stroke-width="0.8" fill="rgba(125,211,183,.04)" opacity="0.45"/>
+        </svg>
+        <span class="invest-wordmark">Novo<span class="accent">Path</span></span>
+      </div>
+      <div class="invest-logo">
           <span class="invest-wordmark">Novo<span class="accent">Path</span></span>
         </div>
         <div class="invest-meta">
@@ -202,7 +271,19 @@
 
       <!-- TEAM MANAGEMENT SYSTEMS -->
       <a class="invest-card" href="https://teamservice.com/" target="_blank" rel="noopener">
-        <div class="invest-logo">
+              <div class="invest-card-header" style="background:linear-gradient(135deg,#102030,#0d1c2c);">
+        <svg viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#7cb8e8" stroke-width="0.55" opacity="0.12">
+            <line x1="0" y1="22" x2="400" y2="22"/><line x1="0" y1="44" x2="400" y2="44"/><line x1="0" y1="66" x2="400" y2="66"/><line x1="0" y1="88" x2="400" y2="88"/>
+            <line x1="50"  y1="0" x2="50"  y2="110"/><line x1="100" y1="0" x2="100" y2="110"/><line x1="150" y1="0" x2="150" y2="110"/><line x1="200" y1="0" x2="200" y2="110"/><line x1="250" y1="0" x2="250" y2="110"/><line x1="300" y1="0" x2="300" y2="110"/><line x1="350" y1="0" x2="350" y2="110"/>
+          </g>
+          <g fill="#7cb8e8" opacity="0.35"><circle cx="100" cy="44" r="2.5"/><circle cx="150" cy="22" r="2.5"/><circle cx="200" cy="66" r="3.5"/><circle cx="250" cy="44" r="2.5"/><circle cx="150" cy="88" r="2.5"/><circle cx="50"  cy="66" r="2.5"/><circle cx="300" cy="88" r="2.5"/><circle cx="350" cy="22" r="2"/></g>
+          <g stroke="#7cb8e8" stroke-width="1.4" opacity="0.38" fill="none"><polyline points="50,66 100,66 100,44 150,44 150,22 200,22 200,66 250,66 250,44 300,44"/></g>
+          <g fill="#7cb8e8" opacity="0.65"><circle cx="50" cy="66" r="3.5"/><circle cx="100" cy="44" r="3"/><circle cx="150" cy="22" r="3"/><circle cx="200" cy="66" r="3.5"/><circle cx="250" cy="44" r="3"/><circle cx="300" cy="44" r="3"/></g>
+        </svg>
+        <span class="invest-wordmark" style="font-size:1.3rem;">Team Mgmt <span class="accent">Systems</span></span>
+      </div>
+      <div class="invest-logo">
           <span class="invest-wordmark">Team Management <span class="accent">Systems</span></span>
         </div>
         <div class="invest-meta">

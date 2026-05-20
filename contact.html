@@ -7,6 +7,43 @@
 <meta name="description" content="Start a confidential conversation with Silver Field. Founders, brokers, investment banks, and lenders all welcome.">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="favicon.png">
+
+<!-- Michigan map + letterhead frame -->
+<style>
+  .letter-frame-outer {
+    position: relative;
+    border: 1px solid rgba(212,165,116,.2);
+    border-radius: 6px;
+    overflow: hidden;
+    background: linear-gradient(180deg,rgba(17,35,65,.55),rgba(12,24,48,.38));
+  }
+  .letter-frame-outer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,transparent,rgba(212,165,116,.5),transparent);
+  }
+  .letter-frame-outer::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,transparent,rgba(212,165,116,.22),transparent);
+  }
+  .letter-frame-inner {
+    position: relative;
+    z-index: 2;
+  }
+  .mi-watermark {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    opacity: 0.055;
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
 </head>
 <body>
 
@@ -65,6 +102,16 @@
       </div>
 
       <!-- Form -->
+      <div class="letter-frame-outer">
+        <!-- Michigan map watermark -->
+        <svg class="mi-watermark" width="200" height="260" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55 242 L50 188 L42 160 L46 132 L42 104 L52 86 L66 72 L80 67 L84 57 L80 43 L90 34 L98 38 L102 52 L112 49 L122 42 L132 47 L136 57 L132 68 L142 76 L155 80 L160 90 L152 100 L147 114 L152 128 L148 148 L152 168 L150 192 L142 212 L137 230 L128 244 L114 250 L96 252 L76 250 Z" fill="none" stroke="#f4f1ea" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M42 86 L24 78 L10 72 L6 62 L20 55 L40 52 L50 58 L50 86" fill="none" stroke="#f4f1ea" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="88" cy="148" r="4" fill="#d4a574" stroke="#d4a574"/>
+          <text x="92" y="142" font-family="Manrope,sans-serif" font-size="8.5" fill="#d4a574" font-weight="600">E. Grand Rapids</text>
+        </svg>
+        <div class="letter-frame-inner">
+
       <form id="contact-form"
             action="https://formspree.io/f/mjglnvyk"
             method="POST"
@@ -159,6 +206,8 @@
           <p style="font-size: 0.85rem; color: var(--text-tertiary); margin: 0;">All inquiries are treated as confidential.</p>
         </div>
       </form>
+        </div><!-- /letter-frame-inner -->
+      </div><!-- /letter-frame-outer -->
 
       <!-- Alternate contact -->
       <div class="reveal" style="margin-top: var(--space-12); text-align: center;">
