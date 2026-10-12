@@ -109,10 +109,10 @@ h4 {
 p { color: var(--text-secondary); }
 a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
 
-/* Accent italic in headlines — now blue instead of gold italic */
+/* Headline accent line — same ink color as the rest of the headline */
 .italic-accent {
   font-style: normal;
-  color: var(--accent-blue);
+  color: inherit;
   font-weight: 500;
 }
 
