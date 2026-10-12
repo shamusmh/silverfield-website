@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Field — Redesign Preview 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Option A fonts: IBM Plex Sans + IBM Plex Serif (institutional, engineered, not AI-default) -->
+<!-- Option B fonts: Spectral (bookish serif) + Archivo (industrial grotesque) -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* White / blue / grey institutional palette */
+  --white: #ffffff;
+  --paper: #f7f8fa;        /* faintest cool grey panel */
+  --panel: #eef1f5;        /* card grey */
+  --line: #dfe3ea;         /* hairlines */
+  --line-2: #c7cdd8;
+  --ink: #14192a;
+  --navy: #10243f;         /* deep institutional navy — headings */
+  --slate: #3b4a5e;        /* body text */
+  --slate-mute: #6b7686;   /* captions */
+  --blue: #1f5fd0;         /* clean confident blue — primary accent */
+  --blue-deep: #164aa8;
+  --blue-dk: #164aa8;      /* hover */
+  --blue-tint: #e8f0fd;    /* light blue wash */
+  --grey-dk: #2b3340;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--white);
+  color: var(--slate);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Preview chrome */
+.pv { background:#0c1625; color:#fff; padding:.7rem 2rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; position:sticky; top:0; z-index:200; }
+.pv b { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; font-family:'IBM Plex Sans',sans-serif; }
+.pv-nav { display:flex; gap:.4rem; flex-wrap:wrap; }
+.pv-nav a { font-family:'IBM Plex Sans',sans-serif; font-size:.68rem; font-weight:600; letter-spacing:.05em; padding:.26rem .75rem; border:1px solid rgba(255,255,255,.25); border-radius:3px; color:#fff; }
+.pv-nav a:hover { background:rgba(255,255,255,.12); }
+
+.container { max-width:1180px; margin:0 auto; padding:0 2.5rem; }
+.block-label { display:inline-block; background:#0c1625; color:#fff; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; padding:.5rem 1.25rem; font-family:'IBM Plex Sans',sans-serif; }
+.opt-desc { padding:1.5rem 2.5rem 0; max-width:1180px; margin:0 auto; }
+.opt-desc h4 { font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:.3rem; }
+.opt-desc p { font-size:.9rem; color:var(--slate-mute); max-width:720px; }
+.opt-desc code { background:var(--panel); padding:.1em .45em; border-radius:3px; font-size:.85em; }
+
+/* ════════════════════════════════════════════════════
+   OPTION A — IBM PLEX (engineered / institutional)
+   Serif headings in Plex Serif, body in Plex Sans.
+   Reads like a research house or quant fund.
+════════════════════════════════════════════════════ */
+.optA { font-family:'IBM Plex Sans', sans-serif; }
+.optA h1, .optA h2, .optA h3 { font-family:'IBM Plex Serif', Georgia, serif; color:var(--navy); font-weight:500; line-height:1.12; letter-spacing:-.01em; }
+.optA h1 { font-size:clamp(2.4rem,5vw,4rem); line-height:1.04; letter-spacing:-.02em; }
+.optA h2 { font-size:clamp(1.7rem,3.2vw,2.5rem); }
+.optA h3 { font-size:1.2rem; font-weight:600; }
+
+.A-nav { border-bottom:1px solid var(--line); background:var(--white); }
+.A-nav-in { max-width:1180px; margin:0 auto; padding:1.3rem 2.5rem; display:flex; align-items:center; justify-content:space-between; }
+.A-brand { display:flex; align-items:center; gap:.7rem; }
+.A-brand svg { width:30px; height:30px; }
+.A-brand span { font-family:'IBM Plex Serif',serif; font-size:1.3rem; font-weight:600; color:var(--navy); }
+.A-links { display:flex; gap:1.9rem; list-style:none; }
+.A-links a { font-size:.85rem; font-weight:500; color:var(--slate-mute); padding-bottom:3px; border-bottom:2px solid transparent; }
+.A-links a:hover { color:var(--navy); }
+.A-links a.on { color:var(--navy); border-color:var(--blue); }
+.A-cta { background:var(--blue); color:#fff!important; padding:.5rem 1.1rem!important; border-radius:3px; font-weight:600; border-bottom:none!important; }
+.A-cta:hover { background:var(--blue-dk); }
+
+.A-hero { padding:5rem 0 4rem; }
+.A-eyebrow { font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); display:inline-flex; align-items:center; gap:.7rem; margin-bottom:1.75rem; }
+.A-eyebrow::before { content:''; width:26px; height:2px; background:var(--blue); }
+.A-hero-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:end; }
+.A-hero h1 { margin-bottom:1.5rem; }
+.A-hero h1 .accent { color:var(--blue); }
+.A-hero-right p { font-size:1rem; line-height:1.65; margin-bottom:1.75rem; color:var(--slate); }
+.btn { font-family:'IBM Plex Sans',sans-serif; font-size:.9rem; font-weight:600; padding:.7rem 1.4rem; border-radius:3px; cursor:pointer; display:inline-flex; gap:.4rem; align-items:center; transition:all .16s; }
+.btn-fill { background:var(--blue); color:#fff; border:1px solid var(--blue); }
+.btn-fill:hover { background:var(--blue-dk); border-color:var(--blue-dk); }
+.btn-line { background:#fff; color:var(--navy); border:1px solid var(--line-2); }
+.btn-line:hover { border-color:var(--navy); }
+.cta-row { display:flex; gap:.8rem; flex-wrap:wrap; }
+
+.A-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3.5rem; padding-top:1.75rem; border-top:1px solid var(--line); }
+.A-meta dt { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--slate-mute); font-weight:600; margin-bottom:.3rem; }
+.A-meta dd { font-family:'IBM Plex Serif',serif; font-size:1.05rem; color:var(--navy); }
+
+.A-sec { padding:5rem 0; }
+.A-sec.alt { background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.A-head { max-width:620px; margin-bottom:2.75rem; }
+.A-head .A-eyebrow { margin-bottom:1rem; }
+.A-head h2 { margin-bottom:.9rem; }
+.A-head p { font-size:1.1rem; color:var(--slate); }
+
+.A-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+.A-card { background:#fff; border:1px solid var(--line); border-radius:5px; padding:1.75rem; }
+.A-card .n { font-family:'IBM Plex Serif',serif; font-size:.9rem; color:var(--blue); margin-bottom:1.1rem; font-weight:600; }
+.A-card h3 { margin-bottom:.55rem; }
+.A-card p { font-size:.93rem; line-height:1.55; }
+
+.A-statement { background:var(--navy); color:#fff; }
+.A-statement .A-eyebrow { color:#7fb0ff; }
+.A-statement .A-eyebrow::before { background:#7fb0ff; }
+.A-statement h2 { color:#fff; font-weight:400; max-width:22ch; }
+.A-statement h2 em { color:#9cc2ff; font-style:italic; }
+.A-stat-meta { display:flex; gap:3rem; margin-top:2.5rem; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,.18); flex-wrap:wrap; }
+.A-stat-meta b { font-family:'IBM Plex Serif',serif; font-size:1.4rem; color:#fff; display:block; font-weight:500; }
+.A-stat-meta span { font-size:.78rem; letter-spacing:.05em; color:#7fb0ff; }
+
+.A-ledger { border-top:2px solid var(--navy); }
+.A-lrow { display:grid; grid-template-columns:auto 1fr; gap:3rem; align-items:baseline; padding:1.6rem 0; border-bottom:1px solid var(--line); }
+.A-lnum { font-family:'IBM Plex Serif',serif; font-size:clamp(2.4rem,4.5vw,3.6rem); font-weight:500; line-height:.9; color:var(--navy); min-width:6rem; letter-spacing:-.02em; }
+.A-lnum .u { color:var(--blue); }
+.A-llabel { font-size:.98rem; line-height:1.5; color:var(--slate); max-width:42ch; }
+
+/* ════════════════════════════════════════════════════
+   OPTION B — SPECTRAL + ARCHIVO (bookish / industrial)
+════════════════════════════════════════════════════ */
+.optB { font-family:'Archivo', sans-serif; }
+.optB h1, .optB h2, .optB h3 { font-family:'Spectral', Georgia, serif; color:var(--navy); font-weight:500; line-height:1.14; letter-spacing:0; }
+.optB h1 { font-size:clamp(2.4rem,5vw,4rem); line-height:1.08; }
+.optB h2 { font-size:clamp(1.7rem,3.2vw,2.5rem); }
+.optB h3 { font-size:1.2rem; font-weight:600; }
+.optB .A-brand span { font-family:'Spectral',serif; }
+.optB .A-meta dd, .optB .A-card .n, .optB .A-stat-meta b, .optB .A-lnum { font-family:'Spectral',serif; }
+.optB .A-eyebrow { font-family:'Archivo',sans-serif; font-weight:600; }
+.optB .btn, .optB .A-links a, .optB .A-meta dt { font-family:'Archivo',sans-serif; }
+
+/* responsive */
+@media (max-width:860px){
+  .A-hero-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .A-pillars{grid-template-columns:1fr;}
+  .A-meta{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="pv">
+  <b>Redesign Preview 2 · White / Blue / Grey · Not Live</b>
+  <nav class="pv-nav">
+    <a href="#optA">Option A · IBM Plex</a>
+    <a href="#optB">Option B · Spectral + Archivo</a>
+  </nav>
+</div>
+
+<!-- ═══════════════ OPTION A ═══════════════ -->
+<div id="optA">
+<div class="block-label">Option A — IBM Plex Serif + Plex Sans</div>
+<div class="opt-desc">
+  <h4>Engineered, institutional</h4>
+  <p>IBM Plex was designed for IBM as a corporate typeface — it reads as technical, precise, and established. Not a font you'll see on AI-generated marketing sites. The serif headings feel like a research house; the sans body feels like documentation.</p>
+</div>
+
+<div class="optA">
+  <header class="A-nav">
+    <div class="A-nav-in">
+      <div class="A-brand">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2 L28 6 V15 C28 23 16 30 16 30 C16 30 4 23 4 15 V6 Z" fill="#10243f"/><path d="M9 17 Q14 13 18 15 L23 11" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="22" cy="11" r="2.4" fill="#fff"/></svg>
+        <span>Silver Field</span>
+      </div>
+      <ul class="A-links">
+        <li><a class="on" href="#">Who We Are</a></li>
+        <li><a href="#">What We Look For</a></li>
+        <li><a href="#">Approach</a></li>
+        <li><a href="#">Investments</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a class="A-cta" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="A-hero">
+    <div class="container">
+      <div class="A-eyebrow">Silver Field · Who We Are</div>
+      <div class="A-hero-grid">
+        <div>
+          <h1>Operator-Led.<br>Founder-Aligned.<br><span class="accent">Built for Permanence.</span></h1>
+        </div>
+        <div class="A-hero-right">
+          <p>A platform investment firm partnering with founder-led businesses — combining deep operational expertise, patient capital, and a programmatic approach to build category leaders.</p>
+          <div class="cta-row">
+            <a href="#" class="btn btn-fill">Start a Conversation →</a>
+            <a href="#" class="btn btn-line">Our Approach</a>
+          </div>
+        </div>
+      </div>
+      <dl class="A-meta">
+        <div><dt>Firm</dt><dd>Platform Investment</dd></div>
+        <div><dt>Capital</dt><dd>Deal-by-Deal</dd></div>
+        <div><dt>Based</dt><dd>East Grand Rapids, MI</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="A-sec alt">
+    <div class="container">
+      <div class="A-head">
+        <div class="A-eyebrow">What We Are</div>
+        <h2>Three things, working together.</h2>
+        <p>Most firms have one of these. Few combine all three.</p>
+      </div>
+      <div class="A-pillars">
+        <div class="A-card"><div class="n">01</div><h3>Experienced Operators</h3><p>Hands-on leadership with deep experience building and scaling businesses — operators who have already done it, not first-time CEOs learning on the job.</p></div>
+        <div class="A-card"><div class="n">02</div><h3>Patient Capital</h3><p>A concentrated group of long-term capital partners aligned with our hold horizon — not a fund clock that forces selling at the wrong moment.</p></div>
+        <div class="A-card"><div class="n">03</div><h3>Programmatic Platform</h3><p>Focused platforms built sequentially across carefully selected verticals — shared resources and playbooks that let each platform compound.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="A-statement">
+    <div class="container" style="padding-top:4.5rem;padding-bottom:4.5rem;">
+      <div class="A-eyebrow">The Result</div>
+      <h2 style="margin-top:1.2rem;">When operator experience, patient capital, and programmatic discipline converge on the right business, the outcome is more than growth — <em>it's category leadership.</em></h2>
+      <div class="A-stat-meta">
+        <div><b>$2M–$10M</b><span>Platform EBITDA</span></div>
+        <div><b>10+ year</b><span>Hold horizon</span></div>
+        <div><b>Founder-led</b><span>Operating partnerships</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="A-sec">
+    <div class="container">
+      <div class="A-head">
+        <div class="A-eyebrow">Track Record</div>
+        <h2>Operator results, not just operator stories.</h2>
+        <p>The numbers below come from one platform we built — a single, illustrative example.</p>
+      </div>
+      <div class="A-ledger">
+        <div class="A-lrow"><div class="A-lnum">6</div><div class="A-llabel">Acquisitions completed on one platform, plus a major transformative merger.</div></div>
+        <div class="A-lrow"><div class="A-lnum">2</div><div class="A-llabel">Exits delivered to long-term capital partners.</div></div>
+        <div class="A-lrow"><div class="A-lnum">30<span class="u">→</span>300<span class="u">+</span></div><div class="A-llabel">Team scaled with shared operating systems and infrastructure.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ═══════════════ OPTION B ═══════════════ -->
+<div id="optB" style="margin-top:3rem;">
+<div class="block-label">Option B — Spectral + Archivo</div>
+<div class="opt-desc">
+  <h4>Bookish serif, industrial sans</h4>
+  <p>Spectral is a screen-first serif commissioned by Google / Production Type — warm and readable, with none of the high-contrast "fashion serif" look of Fraunces. Archivo is a grotesque sans with an industrial, almost newsprint character. Together they feel editorial and grounded.</p>
+</div>
+
+<div class="optB">
+  <header class="A-nav">
+    <div class="A-nav-in">
+      <div class="A-brand">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2 L28 6 V15 C28 23 16 30 16 30 C16 30 4 23 4 15 V6 Z" fill="#10243f"/><path d="M9 17 Q14 13 18 15 L23 11" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="22" cy="11" r="2.4" fill="#fff"/></svg>
+        <span>Silver Field</span>
+      </div>
+      <ul class="A-links">
+        <li><a class="on" href="#">Who We Are</a></li>
+        <li><a href="#">What We Look For</a></li>
+        <li><a href="#">Approach</a></li>
+        <li><a href="#">Investments</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a class="A-cta" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="A-hero">
+    <div class="container">
+      <div class="A-eyebrow">Silver Field · Who We Are</div>
+      <div class="A-hero-grid">
+        <div>
+          <h1>Operator-Led.<br>Founder-Aligned.<br><span class="accent" style="color:var(--blue);">Built for Permanence.</span></h1>
+        </div>
+        <div class="A-hero-right">
+          <p>A platform investment firm partnering with founder-led businesses — combining deep operational expertise, patient capital, and a programmatic approach to build category leaders.</p>
+          <div class="cta-row">
+            <a href="#" class="btn btn-fill">Start a Conversation →</a>
+            <a href="#" class="btn btn-line">Our Approach</a>
+          </div>
+        </div>
+      </div>
+      <dl class="A-meta">
+        <div><dt>Firm</dt><dd>Platform Investment</dd></div>
+        <div><dt>Capital</dt><dd>Deal-by-Deal</dd></div>
+        <div><dt>Based</dt><dd>East Grand Rapids, MI</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="A-sec alt">
+    <div class="container">
+      <div class="A-head">
+        <div class="A-eyebrow">What We Are</div>
+        <h2>Three things, working together.</h2>
+        <p>Most firms have one of these. Few combine all three.</p>
+      </div>
+      <div class="A-pillars">
+        <div class="A-card"><div class="n">01</div><h3>Experienced Operators</h3><p>Hands-on leadership with deep experience building and scaling businesses — operators who have already done it, not first-time CEOs learning on the job.</p></div>
+        <div class="A-card"><div class="n">02</div><h3>Patient Capital</h3><p>A concentrated group of long-term capital partners aligned with our hold horizon — not a fund clock that forces selling at the wrong moment.</p></div>
+        <div class="A-card"><div class="n">03</div><h3>Programmatic Platform</h3><p>Focused platforms built sequentially across carefully selected verticals — shared resources and playbooks that let each platform compound.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="A-statement">
+    <div class="container" style="padding-top:4.5rem;padding-bottom:4.5rem;">
+      <div class="A-eyebrow">The Result</div>
+      <h2 style="margin-top:1.2rem;">When operator experience, patient capital, and programmatic discipline converge on the right business, the outcome is more than growth — <em>it's category leadership.</em></h2>
+      <div class="A-stat-meta">
+        <div><b>$2M–$10M</b><span>Platform EBITDA</span></div>
+        <div><b>10+ year</b><span>Hold horizon</span></div>
+        <div><b>Founder-led</b><span>Operating partnerships</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="A-sec">
+    <div class="container">
+      <div class="A-head">
+        <div class="A-eyebrow">Track Record</div>
+        <h2>Operator results, not just operator stories.</h2>
+        <p>The numbers below come from one platform we built — a single, illustrative example.</p>
+      </div>
+      <div class="A-ledger">
+        <div class="A-lrow"><div class="A-lnum">6</div><div class="A-llabel">Acquisitions completed on one platform, plus a major transformative merger.</div></div>
+        <div class="A-lrow"><div class="A-lnum">2</div><div class="A-llabel">Exits delivered to long-term capital partners.</div></div>
+        <div class="A-lrow"><div class="A-lnum">30<span class="u">→</span>300<span class="u">+</span></div><div class="A-llabel">Team scaled with shared operating systems and infrastructure.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<div style="height:4rem;"></div>
+
+</body>
+</html>
